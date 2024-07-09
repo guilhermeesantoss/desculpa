@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me DESCULPAA?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(https://i.pinimg.com/originals/61/d9/a6/61d9a6d6b9a86e1d7bdedf4b0c4776af.jpg);
+            background-size: cover;
+            background-position: center;
+            
+            
+        }
+
+        .box {
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: transparent;
+            border: 2px solid rgb(94, 61, 156);
+            border-radius: 30px;
+            box-shadow: 0 0 50px rgb(158, 8, 8);
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            padding: 30px;
+            text-align: center;
+            overflow: hidden; /* Para esconder conteúdo que ultrapasse as dimensões da caixa */
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            background-color: transparent;
+            border: 2px solid rgb(64, 22, 104);
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 50px rgb(129, 8, 8);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .box.open .content {
+            display: block;
+            opacity: 1;
+        }
+
+        .pull-tab {
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 60px;
+            background-color: transparent;
+            border: 2px solid rgb(94, 61, 156);
+            border-radius: 20px; 
+            box-shadow: 0 0 50px rgb(158, 8, 8);
+            cursor: pointer;
+            transition: bottom 0.3s ease-in-out;
+        }
+
+        .box.open .pull-tab {
+            bottom: calc(100% - 20px);
+        }
+
+        .buttons-container {
+            display: none;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons-container.active {
+            display: flex;
+        }
+
+        button {
+            margin: 0 20px;
+            padding: 10px 20px;
+            background-color: transparent;
+            border:2px solid rgb(94, 61, 156);
+            border-radius: 5px;
+            box-shadow: 0 0 50px rgb(33, 5, 100);
+            cursor: pointer;
+            font-size: 19px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        button:hover {
+            background-color: #7a209e;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>DESCULPAA❤️ </p>
+        <div class="content">
+            <p></p>
+        </div>
+        <div class="buttons-container">
+            <button onclick="aceitar()">Sim</button>
+            <button onclick="recusar()">Não</button>
+        </div>
+        <div class="pull-tab" onclick="toggleContent()">   🫵🏾     
+
+        </div>
+    </div>
+<script> function toggleContent() {
+    const box = document.querySelector('.box');
+    box.classList.toggle('open');
+    const content = document.querySelector('.content');
+    if (box.classList.contains('open')) {
+        setTimeout(() => {
+            content.style.opacity = '1';
+        }, 300); // Atraso para combinar com a transição CSS
+    } else {
+        content.style.opacity = '0';
+    }
+    const buttonsContainer = document.querySelector('.buttons-container');
+    buttonsContainer.classList.toggle('active');
+}
+
+function aceitar() {
+    alert('ebaaa,obrigado por me desculpar.❤️');
+    // Você pode adicionar sua ação para quando 'Sim' for clicado aqui
+}
+
+function recusar() {
+
+    alert('aaaa, q pena🥺🥺');
+    // Você pode adicionar sua ação para quando 'Não' for clicado aqui
+}
+</script></script>
